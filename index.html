@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলা AI চ্যাটবট - বিনামূল্যে AI সহায়ক</title>
+    <meta name="description" content="বাংলায় কথা বলুন AI চ্যাটবটের সাথে। বিনামূল্যে প্রশ্ন করুন, উত্তর পান।">
+    
+    <!-- ফেভিকন -->
+    <link rel="icon" type="image/png" href="assets/bot-icon.png">
+    
+    <!-- বাংলা ফন্ট -->
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    
+    <!-- স্টাইল -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ফেসবুক ওপেন গ্রাফ -->
+    <meta property="og:title" content="বাংলা AI চ্যাটবট">
+    <meta property="og:description" content="বিনামূল্যে বাংলায় AI চ্যাট করুন">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="https://your-site.netlify.app">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="বাংলা AI চ্যাটবট">
+    <meta name="twitter:description" content="বাংলায় AI চ্যাট করুন">
+</head>
+<body>
+    <!-- হেডার -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🤖</div>
+                <h1>বাংলা AI</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link">হোম</a>
+                <a href="#chat" class="nav-link">চ্যাট</a>
+                <a href="#about" class="nav-link">সম্পর্কে</a>
+                <a href="#contact" class="nav-btn">যোগাযোগ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- হিরো সেকশন -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">💬 বাংলায় কথা বলুন AI এর সাথে</h2>
+                <p class="hero-subtitle">
+                    প্রথম বাংলা AI চ্যাটবট যা সম্পূর্ণ বিনামূল্যে। প্রশ্ন করুন, উত্তর পান, 
+                    কথোপকথন করুন - সবই বাংলায়।
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">১০০%</span>
+                        <span class="stat-label">বিনামূল্যে</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">২৪/৭</span>
+                        <span class="stat-label">সর্বদা প্রস্তুত</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">বাংলা</span>
+                        <span class="stat-label">সম্পূর্ণ সমর্থন</span>
+                    </div>
+                </div>
+                <a href="#chat" class="cta-button">চ্যাট শুরু করুন →</a>
+            </div>
+            <div class="hero-image">
+                <div class="chat-preview">
+                    <div class="chat-message user">হ্যালো, কেমন আছো?</div>
+                    <div class="chat-message bot">হ্যালো! আমি ভালো আছি, ধন্যবাদ! আপনি কেমন আছেন?</div>
+                    <div class="chat-message user">বাংলাদেশের রাজধানী কোথায়?</div>
+                    <div class="chat-message bot">বাংলাদেশের রাজধানী ঢাকা।</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- চ্যাটবট সেকশন -->
+    <section id="chat" class="chat-section">
+        <div class="container">
+            <h2 class="section-title">🤖 সরাসরি চ্যাট করুন</h2>
+            <p class="section-subtitle">নিচের বক্সে বাংলায় লিখুন এবং Enter চাপুন</p>
+            
+            <div class="chat-container">
+                <!-- চ্যাট হেডার -->
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <div class="chat-avatar">🤖</div>
+                        <div>
+                            <h3>বাংলা AI সহায়ক</h3>
+                            <p class="chat-status">
+                                <span class="status-dot online"></span>
+                                অনলাইন
+                            </p>
+                        </div>
+                    </div>
+                    <button class="chat-clear" id="clearChat">
+                        নতুন শুরু
+                    </button>
+                </div>
+                
+                <!-- চ্যাট মেসেজেস -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be added here by JavaScript -->
+                </div>
+                
+                <!-- চ্যাট ইনপুট -->
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="userInput" 
+                            placeholder="বাংলায় আপনার প্রশ্ন লিখুন... (Enter চাপুন)"
+                            autocomplete="off"
+                        >
+                        <button id="sendBtn" class="send-btn">
+                            প্রেরণ
+                        </button>
+                    </div>
+                    <div class="input-hints">
+                        <span class="hint">উদাহরণ:</span>
+                        <button class="hint-btn" data-text="হ্যালো">হ্যালো</button>
+                        <button class="hint-btn" data-text="তোমার নাম কি">নাম</button>
+                        <button class="hint-btn" data-text="বাংলাদেশের রাজধানী">রাজধানী</button>
+                        <button class="hint-btn" data-text="সাহায্য চাই">সাহায্য</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- তথ্য সেকশন -->
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">📚 কি করতে পারেন?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>কথোপকথন</h3>
+                    <p>বাংলায় স্বাভাবিক কথোপকথন করুন। গল্প করুন, প্রশ্ন করুন।</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎓</div>
+                    <h3>শিখুন</h3>
+                    <p>বাংলাদেশ, ইতিহাস, সংস্কৃতি সম্পর্কে জানুন।</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>দ্রুত উত্তর</h3>
+                    <p>কয়েক সেকেন্ডের মধ্যে উত্তর পান। কোনো অপেক্ষা নয়।</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>মোবাইল ফ্রেন্ডলি</h3>
+                    <p>সকল ডিভাইসে কাজ করে। মোবাইল, ট্যাবলেট, ডেস্কটপ।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon">🤖</div>
+                        <h2>বাংলা AI</h2>
+                    </div>
+                    <p>বাংলায় AI চ্যাটের জন্য প্রথম প্লাটফর্ম। সম্পূর্ণ বিনামূল্যে এবং সর্বদা উপলব্ধ।</p>
+                </div>
+                <div class="footer-section">
+                    <h3>লিংক</h3>
+                    <a href="#home">হোম</a>
+                    <a href="#chat">চ্যাট</a>
+                    <a href="#about">সম্পর্কে</a>
+                    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h3>যোগাযোগ</h3>
+                    <p>ইমেইল: contact@bangla-ai.com</p>
+                    <p>Telegram: @bangla_ai_bot</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ২০২৪ বাংলা AI চ্যাটবট। সর্বস্বত্ত্ব সংরক্ষিত।</p>
+                <p>Made with ❤️ for বাংলা ভাষা</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- জাভাস্ক্রিপ্ট -->
+    <script src="script.js"></script>
+</body>
+</html>
